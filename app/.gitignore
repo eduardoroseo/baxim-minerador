@@ -1,0 +1,6 @@
+node_modules
+dist
+cookies_btc.json
+last_screenshot.png
+.env
+yarn-error.log

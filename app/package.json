@@ -1,0 +1,23 @@
+{
+  "name": "nano-node",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "Eduardo Roseo",
+  "license": "MIT",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon",
+    "start": "NODE_ENV=production node .",
+    "btc": "node ./src/index.js",
+    "nano": "node ./src/nano.js",
+    "uber": "node ./src/uber.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "dotenv": "^14.2.0",
+    "puppeteer": "^13.1.1",
+    "telegraf": "^4.6.0"
+  }
+}
