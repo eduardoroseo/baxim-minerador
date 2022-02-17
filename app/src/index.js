@@ -63,9 +63,9 @@ const sleepMinutes = () => {
       .catch(() => { console.log('Sem pedido de notificação') });
 
     console.log("Preenchendo form de login");
-    await page.$eval('input[name=btc_address]', el => el.value = process.env.FREE_BTC_EMAIL)
+    await page.$eval('#login_form_btc_address', (el, value) => el.value = value, process.env.FREE_BTC_EMAIL)
       .then(() => console.log("Email preenchido!"));
-    await page.$eval('input[id=login_form_password]', el => el.value = process.env.FREE_BTC_PASSWORD)
+    await page.$eval('#login_form_password', (el, value) => el.value = value, process.env.FREE_BTC_PASSWORD)
       .then(() => console.log("Senha preenchida!"));
 
     console.log("Delay");
@@ -96,6 +96,7 @@ const sleepMinutes = () => {
       })
 
   } catch (error) {
+    await page.screenshot({ path: 'last_screenshot.png' });
     console.log('Não será necessário fazer login');
   }
 
